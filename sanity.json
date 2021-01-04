@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "pmswahsh",
+    "dataset": "development"
+  },
+  "project": {
+    "name": "Towncenter"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "datatable"
+  ],
+  "env": {
+    "development": {
+      "plugins": []
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./schemas/resolveDocumentActions.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./styles/variableOverrides.css"
+    }
+  ]
+}
